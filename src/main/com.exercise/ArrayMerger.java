@@ -1,5 +1,7 @@
 package com.exercise;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.stream.Stream;
 
@@ -36,7 +38,7 @@ public class ArrayMerger {
      * @return a sorted array of ints containing all elements from a and b
      * @throws IllegalArgumentException in a case if one of the arguments is not a sorted array
      */
-    public static int[] mergeLoop(int[] a, int[] b) throws IllegalArgumentException {
+    public static int[] mergeByLoop(@NotNull int[] a, @NotNull int[] b) throws IllegalArgumentException {
         if (isDisordered(a)) throw new IllegalArgumentException("Array A is not sorted");
         if (isDisordered(b)) throw new IllegalArgumentException("Array B is not sorted");
         int posA = 0, posB = 0, retPos = 0, totalItems = a.length + b.length;
@@ -60,7 +62,7 @@ public class ArrayMerger {
      * @param b a sorted array of ints
      * @return a sorted array of ints containing all elements from a and b
      */
-    public static int[] mergeStreams(int[] a, int[] b) {
+    public static int[] mergeByStreams(@NotNull int[] a, @NotNull int[] b) {
         return Stream
             .concat(Arrays.stream(a).boxed(), Arrays.stream(b).boxed())
             .sorted()

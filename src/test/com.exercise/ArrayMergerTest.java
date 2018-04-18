@@ -40,12 +40,12 @@ public class ArrayMergerTest {
     }
 
     @Test
-    public void testMergeLoop() {
-        assertArrayEquals(expected, ArrayMerger.mergeLoop(a, b));
+    public void testmergeByLoop() {
+        assertArrayEquals(expected, ArrayMerger.mergeByLoop(a, b));
     }
 
     @Test
     public void testMergepStreams() {
-        assertArrayEquals(expected, ArrayMerger.mergeStreams(a, b));
+        assertArrayEquals(expected, ArrayMerger.mergeByStreams(a, b));
     }
 }
